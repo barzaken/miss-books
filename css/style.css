@@ -1,0 +1,305 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+body {
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.header,
+.footer {
+    background-color: #41504b;
+    height: 5vh;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    margin-inline-end: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+nav * {
+    color: white;
+    text-decoration: none;
+}
+
+.router-link-exact-active {
+    color: rgb(173, 173, 173);
+}
+
+.home-page,
+.about-page {
+    background-color: #DDDBDE;
+    text-align: center;
+    height: 90vh;
+}
+
+.user-msg {
+    width: 300px;
+    height: max-content;
+    background-color: lightgray;
+    text-align: center;
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 15px;
+    z-index: 10;
+}
+
+.failed {
+    border: 4px solid red;
+}
+
+.success {
+    border: 4px solid rgb(84, 176, 84);
+}
+
+.hero-img {
+    height: 100%;
+    background-image: url('/img/homeBg.jpeg');
+    background-size: cover;
+    position: relative;
+    filter: brightness(0.6);
+}
+
+.hero-text {
+    font-size: 5rem;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.book-add{
+    grid-area: add;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 3px;
+    max-height: 50px;
+}
+.book-info{
+    z-index: 10;
+    position: fixed;
+    background-color: red;
+}
+
+.option-preview{
+    list-style-type: none;
+    background-color: white;
+    padding: 4px;
+    width: 350px;
+    border: 1px solid black;
+    text-align: left;
+    position: relative;
+}
+
+.option-preview button{
+    position: absolute;
+    right: 0;
+}
+
+.main-app {
+    background-color: #DDDBDE;
+    height: 90vh;
+    max-height: 90vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr;
+    grid-template-areas: 'filter' 'add' 'list';
+}
+
+.book-filter {
+    text-align: center;
+    grid-area: filter;
+}
+
+.books-list {
+    background-color: #CAD4DF;
+    grid-area: list;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.books-list ul {
+    max-height: 100%;
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 80px;
+    grid-template-rows: 1fr;
+    text-align: center;
+}
+
+.book-card {
+    gap: 5px;
+    margin-bottom: 15px;
+
+}
+
+.book-card:hover {
+    scale: 1.05;
+}
+
+.book-card img{
+    width: 250px;
+}
+
+.book-details {
+    /* height: 90vh; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'review book';
+    max-height: 90%;
+    max-width: 70%;
+    overflow: auto;
+    position: fixed;
+    background-color: whitesmoke;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 100vh #0000005e;
+}
+
+
+.book-show {
+    padding: 20px;
+    grid-area: book;
+    position: relative;
+    text-align: center;
+}
+
+.book-show * {
+    padding: 5px;
+}
+
+.book-review {
+    padding: 20px;
+    grid-area: review;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'review' 'reviews';
+    overflow-y: scroll;
+}
+
+.review-form {
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-form input,
+label {
+    padding: 6px;
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.review-form textarea {
+    max-width: 100%;
+}
+
+.reviews-cards {
+    grid-area: reviews;
+    overflow-y: scroll;
+    /* overflow-y: scroll; */
+}
+
+.review-card {
+    width: 80%;
+    background-color: rgba(230, 230, 230, 0.934);
+    margin-bottom: 5px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.review-card button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+
+}
+
+.exit-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.cheap {
+    color: rgb(76, 195, 76);
+}
+
+.expensive {
+    color: rgb(204, 61, 61);
+}
+
+@media (max-width:760px) {
+    .book-details {
+        overflow-y: scroll;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'book' 'review';
+        width: 90%;
+    }
+
+    .book-show img {
+        height: 150px;
+    }
+    .book-review{
+        overflow-y: clip;
+    }
+    textarea{
+        width: 100%;
+    }
+
+    .book-show {
+        margin-bottom: 40px;
+    }
+
+    .books-list ul {
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    .book-card img {
+        width: 150px;
+    }
+}
